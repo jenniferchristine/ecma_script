@@ -18,15 +18,30 @@ main {
     background-color: white;
 }
 
+section {
+    margin-bottom: 50px;
+}
+
 h1, h2 {
     text-align: center;
+}
+
+input {
+    padding: 10px;
+    width: 40%;
+    border-radius: 1em;
+    border: 2px solid rgb(223, 172, 172);
+}
+
+table {
+    margin: 0 auto;
+    text-align: left;
 }
 
 thead {
     background-color: #F5E5E5;
 }
 
-table {
-    margin: 0 auto;
-    text-align: left;
+td:last-child {
+    text-align: center;
 }
