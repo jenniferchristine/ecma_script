@@ -1,3 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
 body {
-    color: black;
+    margin: 5%;
+    padding: 0;
+    text-align: center;
+    background-color: rgb(223, 172, 172);
+    color: #535353;
+    font-family: 'Poppins';
+}
+
+main {
+    box-sizing: border-box;
+    padding: 5%;
+    border-radius: 2em;
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+thead {
+    background-color: #F5E5E5;
 }
