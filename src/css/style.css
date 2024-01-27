@@ -25,3 +25,8 @@ h1, h2 {
 thead {
     background-color: #F5E5E5;
 }
+
+table {
+    margin: 0 auto;
+    text-align: left;
+}
