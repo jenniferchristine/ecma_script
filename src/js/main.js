@@ -7,11 +7,35 @@ window.onload = async () => {
     if (response.ok) {
         let data = await response.json();
 
+        const thEl = Array.from(document.getElementsByTagName("th"));
+        thEl.forEach((title) => {
+            title.addEventListener("click", () => sortTable(data, title.id));
+        });
+
         printTable(data);
 
     } else {
         console.log("ERROR: " + response.statusText);
     }
+}
+
+function sortTable(courses, choice) {
+
+    switch (choice) {
+        case "course-code":
+            courses.sort((a, b) => (a.code > b.code) ? 1 : -1);
+            break;
+        case "course-name":
+            courses.sort((a, b) => (a.coursename > b.coursename) ? 1 : -1);
+            break;
+        case "course-prog":
+            courses.sort((a, b) => (a.progression > b.progression) ? 1 : -1);
+            break;
+        default:
+            console.log("Not a valid choice");
+    }
+
+    printTable(courses);
 }
 
 function printTable(courses) {
