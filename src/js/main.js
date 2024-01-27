@@ -12,11 +12,29 @@ window.onload = async () => {
             title.addEventListener("click", () => sortTable(data, title.id));
         });
 
+        const searchEl = document.getElementById("search");
+        searchEl.addEventListener("keyup", () => searchTable(data, searchEl.value.toLowerCase()));
+
         printTable(data);
 
     } else {
         console.log("ERROR: " + response.statusText);
     }
+}
+
+function searchTable(courses, userInput) {
+
+    const searchResult = courses.filter((course) => {
+        if (course.code.includes(userInput)) {
+            return true;
+        } else if (course.coursename.toLowerCase().includes(userInput)) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    printTable(searchResult);
 }
 
 function sortTable(courses, choice) {
